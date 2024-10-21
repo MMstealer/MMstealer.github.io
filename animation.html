@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+
+	
+		#puffin{
+		width:100px;
+		height:100px;
+		background-color:skyblue;
+		position: absolute;
+	animation-name:walk;
+	animation-duration:13s;
+	animation-iteration-count: infinite;
+}
+
+#puffin2{
+		width:100px;
+		height:100px;
+		background-color:skyblue;
+		position: absolute;
+
+	animation-name:crawl;
+	animation-duration:13s;
+	animation-iteration-count: infinite;}
+
+
+
+@keyframes walk {
+	0%{
+		background-color: darkblue;
+		left:100%;
+			top:0%;
+	}
+	20%{
+		background-color: mediumpurple;
+		border-bottom-left-radius: 50%;
+	}
+	40%{
+		background-color: purple;
+		border-bottom-right-radius: 50%;
+	}
+	60%{
+		background-color: hotpink;
+		border-top-left-radius: 50%;
+	}
+	80%{
+		background-color: mediumpurple;
+		border-top-right-radius: 50%;
+	}
+	100%{
+		background-color: darkblue;
+		border-radius: 0;
+		left:0%;
+		top: 85.7%;
+	}
+}
+
+
+@keyframes crawl {
+	0%{
+		background-color: darkblue;
+		left:0%;
+		top:0%;
+	}
+
+	20%{
+		background-color: mediumpurple;
+		border-bottom-left-radius: 50%;
+	}
+	40%{
+		background-color: purple;
+		border-bottom-right-radius: 50%;
+	}
+	60%{
+		background-color: hotpink;
+		border-top-left-radius: 50%;
+	}
+	80%{
+		background-color: mediumpurple;
+		border-top-right-radius: 50%;
+	}
+	100%{
+		background-color: darkblue;
+		border-radius: 0;
+		left:85.9%;
+		top: 87.2%;
+	}
+}
+
+	
+	</style>
+</head>
+<body>
+
+<div id="puffin"></div>
+<div id="puffin2"></div>
+
+</body>
+</html>
