@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+	
+	#bob{
+		/*position: absolute;
+		left: 40%;*/
+		width: 1000px;
+		height: 800px;
+		background-color: blue;
+		background-size:contain;
+	}
+	
+	body{
+		margin:0px;
+		background-color:blue;
+	}
+</style>
+
+</head>
+<body>
+
+<center><div id="bob"></div></center>
+<!-- <div id="freakbob"></div> -->
+<script type="text/javascript">
+
+bob.addEventListener("click", function(){
+	console.log("hi max!");
+
+	bob.style.backgroundImage = "url(spongeBob.png)";
+	console.log(bob.style.backgroundImage)
+
+})
+
+</script>
+	
+</body>
+</html>
