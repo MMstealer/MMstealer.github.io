@@ -7,7 +7,27 @@
 	<title></title>
 	<style type="text/css">
 	
-		
+#superman{
+	position: absolute;
+	height: 300px;
+	width: 200px;
+	top: 0px;
+	right: 200px;
+	background-repeat: no-repeat;
+	background-image: url(https://static.hudl.com/users/prod/8715660_8a091ddec45c434e9a1fd64d3741c73c.jpg);
+
+}
+
+	#pookie{
+	position: absolute;
+	height: 290px;
+	width: 430px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	top:0;
+	left:0;
+	background-image: url(https://k8librarian.wordpress.com/wp-content/uploads/2012/06/dm_120615_lebron_reading_new.jpg);
+	}	
 
 	li {
   font-family: "Sofadi One", system-ui;
@@ -22,15 +42,25 @@
 			left:5%;
 			position: relative;
 /*			text-align: center;*/
-			background-color:red;
+			background-color:lightcyan;
 		}
 
 		#text{
-			background-color:yellow;
+			background-color:lightcyan;
 			position:relative;
 			width:30%;
 			left:30%;
 		}
+		#ball{
+				position:absolute;
+				left:100px;
+				top: 685px;
+			width: 100px;
+			height: 100px;
+			background-color: lightcyan;
+			background-image: url(ball.png);
+			background-size:contain;
+			background-repeat: no-repeat;
 	</style>
 </head>
 <body>
@@ -59,9 +89,40 @@
 		I learned a new way to scroll
 	</li>
 	<li>And finaly I learned new fonts</li>
+	<h4>This is what ive learned by 10/7/24</h4>
+	<li> I have finally posted my website online, I also created a person card! Some instructions i learned is to how to push edits with this code: 
+	cd ./desktop/MMstealer.github.io
+	git add ./
+	git commit -m "making changes"''
+	git push</li>
+
+	<h4>This is what I've learned by 10/21/24</h4>
+	<li>We have started creating full animations. I now have a project were two shifting sqaures cross. We have started adding Javascript into our code to further advance out knowledge of code.</li>
+
+	<h4>Description of my current projects by 11/4/24</h4>
+	<li>Animation is my first projects. It has two moving squares that cross and change shape. I found it cool for a first project because of how three things are going on, moving, color changing, and shape changing.</li>
+	<li>Jumpscare is a holloween project that includes a phone call from a mysterious number and when you answer a suprise awaits.</li>
 </div>
 </div>
-	
+
+	<a>
+    	<div id="ball"></div>
+
+    	<script type="text/javascript">
+    		
+    		document.addEventListener("click", function(event){
+    			console.log(event)
+
+    			ball.style.left = event.clientX + "px"
+
+    			ball.style.top = event.clientY + "px"
+
+
+
+    		})
+    	</script>
+    	<div id="pookie"></div>
+    	<div id="superman"></div>
 
 </body>
 </html>
