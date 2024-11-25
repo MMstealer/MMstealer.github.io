@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		.second {
+			width: 100px;
+			height: 100px;
+			margin: 5px;
+			display: inline-block;
+			background-repeat: no-repeat;
+			background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFQWGJ9KiF6rhUYfZesLTbaC2ki9qP4vkJbAs18gd_oKqM-npQRkKJgdG8ACCkJ9Z6hc8&usqp=CAU);
+			background-size: contain;
+			font-size: 40px;
+			text-align: center;
+			line-height: 100px; 
+		}
+		
+
+		.minute {
+			width: 100px;
+			height: 100px;
+			margin: 5px;
+			display: inline-block;
+			background-repeat: no-repeat;
+			background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMZ9LYMF8hR8oNo1u3-_2tSt2ZC-HYvOIVFw&s);
+			background-size: contain;
+			font-size: 40px;
+			text-align: center;
+			line-height: 100px; 
+		}
+		.hour {
+			width: 100px;
+			height: 100px;
+			margin: 5px;
+			display: inline-block;
+			background-repeat: no-repeat;
+			background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTqCj2sH3Tn5BVecbot0hhJHVEudB1hqgZ8A&s);
+			background-size: contain;
+			font-size: 40px;
+			text-align: center;
+			line-height: 100px; 
+		}
+	</style>
+</head>
+<body>
+	<center><h1>Hours</h1>
+
+		<div id="hours"></div>
+
+	</center>
+	<center><h1>Minutes</h1>
+		<div id="minutes"></div>
+</center>
+
+
+	<center><h1>Seconds</h1>
+		<div id="seconds"></div>
+
+
+	</center>
+
+	<script type="text/javascript">
+		let sec = 0;
+		let sbox;
+		let mbox;
+		let hbox
+		
+
+		function makeSecond() {
+			sec = sec + 1;
+			sbox = document.createElement("div");
+			seconds.appendChild(sbox);
+			sbox.classList.add("second");  
+			sbox.innerText = sec;
+			if (sec == 60) {
+				sec = 0
+				clearInterval(x)
+				disappear()
+
+
+			}
+		}
+
+		var x = setInterval(makeSecond, 1000);
+
+		let min = 0;
+
+		function makeMinute() {
+			min = min + 1;
+			mbox = document.createElement("div");
+			minutes.appendChild(mbox);
+			mbox.classList.add("minute");  
+			mbox.innerText = min;
+			if (min == 60) {
+				min = 0
+				clearInterval(x)
+
+			}
+		}
+
+		var x = setInterval(makeMinute, 60000);
+
+		let hour = 0;
+
+		function makeHour() {
+			hour = hour + 1;
+			hbox = document.createElement("div");
+			hours.appendChild(hbox);
+			hbox.classList.add("hour");  
+			hbox.innerText = hour;
+			if (hour == 60) {
+				hour = 0
+				clearInterval(x)
+
+			}
+		}
+
+		var x = setInterval(makeHour, 360000);
+
+		let sList;
+
+		function disappear(){
+		 sList = document.getElementsByClassName("second");
+		 sList = Array.from(sList)
+
+			console.log(sList)
+			sList.forEach(function(element){
+				element.classList.remove("second")
+				element.innerText = ""
+
+			})
+			
+
+		}
+
+
+
+	</script>
+</body>
+</html>

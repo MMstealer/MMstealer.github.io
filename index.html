@@ -40,11 +40,10 @@
 
 		#ball{
 				position:absolute;
-				left:500px;
-				top: 600px;
+				
 			width: 100px;
 			height: 100px;
-			background-color: lightcyan;
+/*			background-color: lightcyan;*/
 			background-image: url(ball.png);
 			background-size:contain;
 			background-repeat: no-repeat;
@@ -64,17 +63,35 @@
     	<div id="ball"></div>
 
     	<script type="text/javascript">
+	ball.style.left="200px"
+	ball.style.top="200px"
+	document.addEventListener("keydown", function(event){
+
+	
+		console.log(event.keyCode);
+		if(event.keyCode == 39)
+		{
+		ball.style.left = parseInt(ball.style.left) +10+"px"
+
+		}
+
+		if(event.keyCode==37){ 
+			ball.style.left = parseInt(ball.style.left) -10+"px"
+
+		}
+		if(event.keyCode==38){ 
+			ball.style.top = parseInt(ball.style.top) +10+"px"
+
+		}
+		if(event.keyCode==40){ 
+			ball.style.top = parseInt(ball.style.top) -10+"px"
+
+		}
+	})
+
+
+
     		
-    		document.addEventListener("click", function(event){
-    			console.log(event)
-
-    			ball.style.left = event.clientX + "px"
-
-    			ball.style.top = event.clientY + "px"
-
-
-
-    		})
     	</script>
 </body>
 </html>
