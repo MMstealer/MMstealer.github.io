@@ -11,12 +11,21 @@
 		height: 800px;
 		background-color: blue;
 		background-size:contain;
+		position: absolute;
+		top:0%;
+		z-index: 1;
+		left:30%;
 	}
-	scary{
+	#scary{
 		width: 1000px;
 		height: 800px;
 		background-color: blue;
+		position:absolute;
+		top:0%;
 		background-size:contain;
+		z-index: 0;
+		left:30%;
+		background-repeat: no-repeat;
 	}
 	
 	body{
@@ -27,25 +36,31 @@
 
 </head>
 <body>
-	<audio id="Ring" src="videoplayback.mp4"></audio>
-<audio id="Scream" src="scream.mp4"></audio>
+	<audio id="ring" src="videoplayback.mp4"></audio>
+<audio  id="scream" src="scream.mp4"></audio>
 <center><div id="bob"></div></center>
+<center><div id="scary"></div></center>
 <!-- <div id="freakbob"></div> -->
 <script type="text/javascript">
 let boom=0
 bob.addEventListener("click", function(){
-	if (boom=boom+1){
+	boom = boom +1
+	if (boom%2 == 1){
 	console.log("hi max!");
-	Ring.play()
+	ring.play()
 	bob.style.backgroundImage = "url(spongeBob.png)";
 	console.log(bob.style.backgroundImage)
 	}
-	else if (boom=boom+2){
-		Scream.play()
+	else if (boom%2==0){
+		scream.play()
 		scary.style.backgroundImage = "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG3-V-6hH3-mddWD7G1M-Gr-HMBPE4XD9Gww&s)"
-
+		console.log(bob.style.backgroundImage)
+			bob.style.opacity = "0";
 
 	}
+
+
+	
 
 
 
