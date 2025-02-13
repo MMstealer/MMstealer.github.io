@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		.confetti {
+			width: 10px;
+			height: 10px;
+			background-color: deeppink;
+			position: absolute;
+			border-radius: 50%;
+			z-index: -1;
+		}
+		#cannon {
+			background-image: url(cannon.png);
+			width: 100px;
+			height: 300px;
+			top: 70%;
+			position: absolute;
+			left: 47.5%;
+			background-size: contain;
+			background-repeat: no-repeat;
+
+		}
+		
+		#heart1{
+
+			background-image: url(heart.jpg) ;
+			width: 200px;
+			height: 200px;
+			left: 19%;
+			top: 50%;
+			position: absolute;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+		#heart2{
+
+			background-image: url(heart.jpg) ;
+			width: 200px;
+			height: 200px;
+			left: 44%;
+			top: 50%;
+			position: absolute;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+		#heart3{
+
+			background-image: url(heart.jpg) ;
+			width: 200px;
+			height: 200px;
+			left: 69%;
+			top: 50%;
+			position: absolute;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+	</style>
+</head>
+<body>
+
+<div id="cannon"></div>
+<div id="heart1"> </div>
+<div id="heart2"> </div>
+<div id="heart3"> </div>
+<script type="text/javascript">
+	//document.getElementById("heart1").addEventListener("click", function() {
+    //this.style.opacity = "1";
+
+//}
+
+	
+function makeConfetti(input) {
+
+	let confetti = document.createElement("div");
+	cannon.appendChild(confetti);
+	confetti.classList.add("confetti");
+	confetti.id = "c" + input;
+
+	
+	confetti.style.left = "50%";
+	confetti.style.top = "90%";
+
+	
+	confetti.style.width = Math.random() * 10 + 5 + "px";
+	confetti.style.height = Math.random() * 10 + 5 + "px";
+	confetti.style.transform = "rotate(" + Math.random() * 360 + "deg)";
+
+	
+	let velocityX = Math.random() * 6 - 3; 
+	let velocityY = Math.random() * -12 - 8; 
+	let gravity = 0.3; 
+
+	function moveUp() {
+		let currentX = parseFloat(confetti.style.left);
+		let currentY = parseFloat(confetti.style.top);
+
+		
+		velocityY += gravity;
+		confetti.style.left = currentX + velocityX + "px";
+		console.log(currentX)
+		confetti.style.top = currentY + velocityY + "px";
+			console.log(currentY)
+
+		
+		if (velocityY > 0) {
+			velocityX *= 1.05; 
+		}
+
+		
+		if (currentY > window.innerHeight) {
+			confetti.remove();
+			clearInterval(interval);
+		}
+	}
+
+	let interval = setInterval(moveUp, 20);
+}
+})
+
+//document.getElementById("cannon").addEventListener("click",function()){
+for (let i = 0; i < 100; i++) {
+	setTimeout(() => makeConfetti(i), Math.random() * 1000);
+}};
+</script>
+
+</body>
+</html>

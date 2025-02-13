@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		#listicle{
+			font-size: 100px;
+
+		}
+	</style>
+
+</head>
+<body>
+
+	<div id="listicle"></div>
+<script type="text/javascript">
+
+let list = ["Basketball", "Football", "Tennis", "Lacrosse", "ESports", "Soccer", "Moosing"]
+
+let images = ["url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTukox9OKBYRcR16XETTQ6kMsnKjc5YyamtEQ&s)","url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq5t3Mj1-Sg7hUukk2Z4kuh4GIHRyxx4VbQw&s)", "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvbMLKpEvJK_EtedDQEmWmYShNcuN11iosdQ&s)","url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR5ZnsFF_esamGhDcpYpPKgkLNW50ZSmJuEw&s)","url()","url()","url()" ]
+
+document.addEventListener("click", function(){
+	let random = Math.round(Math.random()*5)
+	listicle.innerText = list[random]
+	document.body.style.backgroundImage=images[random]
+
+})
+
+
+
+
+</script>
+</body>
+</html>
