@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+.sqaure {
+
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+	display: inline-block;
+	border-inline: black;
+	border-color: black;
+	margin: 100px;
+}
+
+
+
+</style>
+
+
+
+
+	<title></title>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+	function makeSqaure(){
+	let sqaure = document.createElement("div");
+	document.body.appendChild(sqaure); 
+	sqaure.classList.add("sqaure");
+	//sqaure.id = "c" + input;
+	}
+
+for (let i = 0; i < 1000; i++) {
+	makeSqaure()
+}
+
+</script>
+
+
+
+
+</body>
+</html>

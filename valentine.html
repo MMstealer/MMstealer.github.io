@@ -30,7 +30,7 @@
 			background-repeat: no-repeat;
 		}
 		#heart1 { left: 19%; }
-		#heart2 { left: 44%; }
+		#heart2 { left: 45%; }
 		#heart3 { left: 69%; }
 	</style>
 </head>
@@ -43,8 +43,18 @@
 
 <script type="text/javascript">
 
-heart1.addEventListener("click",function(){
-	heart1.style.backgroundImage = "url(minecraft.png)"
+document.getElementById("heart1").addEventListener("click",function(){
+	heart1.style.backgroundImage = "url(mom1.jpg)"
+})
+
+document.getElementById("heart2").addEventListener("click",function(){
+	heart2.style.backgroundImage = "url(mom2.jpg)"
+	 this.style.backgroundPosition = "center";
+
+})
+
+document.getElementById("heart3").addEventListener("click",function(){
+	heart3.style.backgroundImage = "url(mom3.jpg)"
 })
 
 function makeConfetti(input) {
