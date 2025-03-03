@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+
+<style type="text/css"></style>
+
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+let guest = ["max","arjun","eshaan","micheal", "henry", "matthew", "maheed"]
+
+function makeDiv (input){
+let square=document.createElement("div")
+document.body.appendChild(square)
+square.style.width="100px"
+square.style.height="100px"
+square.style.backgroundColor="orange"
+square.style.margin="10px"
+square.innerText = guest[input]
+square.style.fontSize="100px"
+square.style.textAlign="center"
+
+}
+
+for(let i=0; i<guest.length; i=i+1){
+makeDiv(i)
+}
+
+</script>
+
+
+</body>
+</html>
