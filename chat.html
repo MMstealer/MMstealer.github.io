@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Whack-a-Mole Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .scoreboard {
+      margin: 20px;
+      font-size: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+      grid-gap: 10px;
+      justify-content: center;
+      margin: 0 auto 30px auto;
+    }
+
+    .square {
+      width: 100px;
+      height: 100px;
+      background-color: #ddd;
+      border: 2px solid #555;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .mole {
+      background-color: #ff6b6b;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-bottom: 30px;
+      cursor: pointer;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+      margin-top: 20px;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎯 Whack-a-Mole!</h1>
+  <div class="scoreboard">
+    <p>Score: <span id="score">0</span></p>
+    <p>Time Left: <span id="time-left">60</span> seconds</p>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <button onclick="startGame()">Start Game</button>
+
+  <footer>
+    &copy; 2025 Whack-a-Mole Game by Max MacNeil
+  </footer>
+
+  <script>
+    const grid = document.getElementById("grid");
+    const scoreDisplay = document.getElementById("score");
+    const timeLeftDisplay = document.getElementById("time-left");
+
+    let score = 0;
+    let timeLeft = 60;
+    let molePosition = null;
+    let timerId = null;
+    let countDownTimerId = null;
+
+    function createGrid() {
+      grid.innerHTML = "";
+      for (let i = 0; i < 16; i++) {
+        const square = document.createElement("div");
+        square.classList.add("square");
+        square.setAttribute("id", i);
+        square.addEventListener("click", whackMole);
+        grid.appendChild(square);
+      }
+    }
+
+    function randomMole() {
+      clearMole();
+      const squares = document.querySelectorAll(".square");
+      const randomSquare = squares[Math.floor(Math.random() * squares.length)];
+      randomSquare.classList.add("mole");
+      molePosition = randomSquare.id;
+    }
+
+    function clearMole() {
+      document.querySelectorAll(".square").forEach(square => {
+        square.classList.remove("mole");
+      });
+    }
+
+    function whackMole() {
+      if (this.id === molePosition) {
+        score++;
+        scoreDisplay.textContent = score;
+        molePosition = null;
+      }
+    }
+
+    function moveMole() {
+      timerId = setInterval(randomMole, 800);
+    }
+
+    function countDown() {
+      timeLeft--;
+      timeLeftDisplay.textContent = timeLeft;
+      if (timeLeft === 0) {
+        clearInterval(timerId);
+        clearInterval(countDownTimerId);
+        alert("⏰ Time's up! Your score is " + score);
+      }
+    }
+
+    function startGame() {
+      score = 0;
+      timeLeft = 60;
+      scoreDisplay.textContent = score;
+      timeLeftDisplay.textContent = timeLeft;
+      molePosition = null;
+      clearInterval(timerId);
+      clearInterval(countDownTimerId);
+      moveMole();
+      countDownTimerId = setInterval(countDown, 1000);
+    }
+
+    createGrid();
+  </script>
+</body>
+</html>
+
+

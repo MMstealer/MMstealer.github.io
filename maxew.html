@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+.square{
+background-color: indianred;
+height: 132.77px;
+width: 132.77px;
+margin: 30px;
+display: inline-block;
+background-size:contain;
+background-position: center;
+background-repeat: no-repeat;
+
+
+}
+
+#container{
+position: relative;
+top:192px;
+}
+
+
+
+
+</style>
+
+
+
+</head>
+<body>
+<center>
+<div id="container">
+<div div id="div1" class="square"></div>
+<div div id="div2" class="square"></div>
+<div div id="div3" class="square"></div>
+<div div id="div4" class="square"></div>
+<br>
+<div div id="div5" class="square"></div>
+<div div id="div6" class="square"></div>
+<div div id="div7" class="square"></div>
+<div div id="div8" class="square"></div>
+
+
+</div>
+</center>
+<script type="text/javascript">
+let clickcounter = 0;
+let box;
+document.addEventListener("click", function(){
+clickcounter=clickcounter+1
+	console.log(clickcounter)
+
+
+let random1= Math.floor(Math.random() * 8) + 1;
+
+if(clickcounter%2==1){
+box = document.getElementById("div" + random1);
+box.style.backgroundImage = "url(https://amcoranger.com/wp-content/uploads/2019/06/COLOURBOX105173131-1-495x400.jpg)";
+
+}
+
+if(clickcounter%2==0){
+	console.log(clickcounter)
+box.style.backgroundImage = "url()";
+
+
+// let random2= Math.floor(Math.random() * 8) + 1;
+
+// if(random1!==random2){
+// let box = document.getElementById("div" + random2);
+
+// box.style.backgroundImage = "url(mole.png)";
+
+// }
+
+}
+
+
+
+})
+
+
+
+</script>
+</body>
+</html>
